@@ -10,7 +10,13 @@ function Home() {
   const [username,setUsername]=useState('');
   const navigte= useNavigate();
 
-   
+   const createNewRoom=(e)=>{
+      e.preventDefault();
+      const id = uuidV4();
+     setRoomId(id);
+     toast.success("New room is created")
+     
+   }
   
    const joinRoom= ()=>{
       if(!roomId ){
