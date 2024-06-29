@@ -8,5 +8,7 @@ export const initSocket = async () => {
         timeout: 10000,
         transports: ['websocket'],
     };
+
+    
     return io(import.meta.env.VITE_REACT_APP_BACKEND_URL, options);
 };
