@@ -43,17 +43,6 @@ const Login = () => {
 
           <div>
             <label className='label p-2'>
-              <span className='text-base label-text'>Username</span>
-            </label>
-            <input
-              value={user.username}
-              onChange={(e) => setUser({ ...user, username: e.target.value })}
-              className='w-full input input-bordered h-10'
-              type="text"
-              placeholder='Username' />
-          </div>
-          <div>
-            <label className='label p-2'>
               <span className='text-base label-text'>Password</span>
             </label>
             <input
