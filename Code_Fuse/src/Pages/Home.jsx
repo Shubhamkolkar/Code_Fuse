@@ -105,7 +105,7 @@ function Home() {
       <footer className="fixed bottom-0 m-6 ">
         <h4>
           {" "}
-          <a href="https://github.com/omkarpatil14/techtroppers.git" className="text-[#FFD800]  hover:text-[#897608] text-xl ">
+          <a href="https://github.com/Shubhamkolkar/Code_Fuse" className="text-[#FFD800]  hover:text-[#897608] text-xl ">
              CodeFuse - TechTroopers
           </a>
         </h4>
