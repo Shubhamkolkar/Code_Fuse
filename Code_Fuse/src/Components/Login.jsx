@@ -42,9 +42,6 @@ const Login = () => {
         <form onSubmit={onSubmitHandler} action="">
 
           <div>
-            <label className='label p-2'>
-              <span className='text-base label-text'>Password</span>
-            </label>
             <input
               value={user.password}
               onChange={(e) => setUser({ ...user, password: e.target.value })}
