@@ -33,4 +33,29 @@ app.get('*', (req, res) => {
     }
    });
 
+
+   // Listen for 'connection' event on the 'io' instance, which triggers whenever a new client connects.
+io.on('connection',(socket)=>{
+    console.log('socket conneted',socket.id );
+   
+    // Listen for 'JOIN' action from the client.
+      socket.on(ACTIONS.JOIN,({roomId, username})=>{
+        // Map the socket ID to the username for identification.
+       userSocketMap[socket.id]= username;
+      
+       // Make the socket join the specified room.
+       socket.join(roomId);
+      
+       const clients = getAllConnectedClients(roomId);
+       clients.forEach(({socketId})=>{
+           // Emit a 'JOINED' action to each client in the room.
+          io.to(socketId).emit(ACTIONS.JOINED,{
+           clients,
+           username:username,
+           socketId:socket.id
+          })
+       })
+      })
+
+   
  } 
